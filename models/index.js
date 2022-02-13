@@ -23,7 +23,7 @@ Product.belongsToMany(Tag, {
     model: ProductTag,
     unique: false
   },
-  as: 'products_tag'
+  as: 'product_tag'
 });
 
 // Tags belongToMany Products (through ProductTag)
@@ -33,7 +33,7 @@ Tag.belongsToMany(Product, {
     model: ProductTag,
     unique: false
   },
-  as: 'tag_products'
+  as: 'tag_product'
 });
 
 module.exports = {
