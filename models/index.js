@@ -13,27 +13,29 @@ Product.belongsTo(Category, {
 // Categories have many Products
 
 Category.hasMany(Product, {
-  foreignKey: 'category-id'
+  foreignKey: 'category_id'
 });
 
 // Products belongToMany Tags (through ProductTag)
 
 Product.belongsToMany(Tag, {
+  foreignKey: 'product_id',
   through: {
     model: ProductTag,
     unique: false
   },
-  as: 'product_tag'
+  // as: 'product_tag'
 });
 
 // Tags belongToMany Products (through ProductTag)
 
 Tag.belongsToMany(Product, {
+  foreignKey: "tag_id",
   through: {
     model: ProductTag,
     unique: false
   },
-  as: 'tag_product'
+  // as: 'tag_product'
 });
 
 module.exports = {
